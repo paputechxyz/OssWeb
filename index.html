@@ -1,313 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenSea Sales - Real-Time NFT Notifications</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Montserrat", sans-serif;
-        margin: 0;
-        padding: 0;
-        color: #333;
-        line-height: 1.6;
-      }
-      .banner {
-        height: 360px;
-        position: relative;
-        background-color: #0077cc;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenSea Sales - Real-Time NFT Sales Tracker & Notifications</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .banner {
+      height: 360px;
+      position: relative;
+      background-color: #0077cc;
+    }
+
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #0077cc;
+    }
+
+    .logo-image {
+      margin-right: 10px;
+    }
+
+    .tagline {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .hero-section {
+      padding: 80px 5%;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .blue-bg {
+      background-color: #0077cc;
+      color: white;
+    }
+
+    .blue-bg h1 {
+      color: white;
+    }
+
+    .blue-bg .button {
+      background-color: #ffffff;
+      color: #0077cc;
+    }
+
+    .blue-bg .button:hover {
+      background-color: #f0f0f0;
+      color: #005fa3;
+    }
+
+    .hero-section h1 {
+      font-size: 42px;
+      margin-bottom: 30px;
+      color: #0077cc;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #0077cc;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #005fa3;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 119, 204, 0.3);
+    }
+
+    .features {
+      padding: 80px 5%;
+      background-color: #0077cc;
+      text-align: center;
+      color: white;
+    }
+
+    .features h2 {
+      font-size: 36px;
+      margin-bottom: 50px;
+      color: #ffffff;
+    }
+
+    .feature-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .feature {
+      flex: 1 1 250px;
+      max-width: 300px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature i {
+      font-size: 40px;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .how-it-works {
+      padding: 80px 5%;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .how-it-works h2 {
+      font-size: 36px;
+      margin-bottom: 50px;
+      color: #0077cc;
+    }
+
+    .steps-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .step {
+      flex: 1;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .step i {
+      font-size: 36px;
+      color: #0077cc;
+      margin-bottom: 15px;
+    }
+
+    .step p {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .cta-section {
+      padding: 100px 5%;
+      text-align: center;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section h2 {
+      font-size: 36px;
+      color: #0077cc;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 40px 5%;
+      text-align: center;
+    }
+
+    footer a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
       header {
-        background-color: #ffffff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 15px 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        text-align: center;
       }
-      .logo {
-        display: flex;
-        align-items: center;
-        font-size: 24px;
-        font-weight: 700;
-        color: #0077cc;
-      }
-      .logo-image {
-        margin-right: 10px;
-      }
+
       .tagline {
-        font-size: 16px;
-        color: #555;
+        margin-top: 10px;
       }
-      .hero-section {
-        padding: 80px 5%;
-        text-align: center;
-        background-color: #ffffff;
-      }
-      .blue-bg {
-        background-color: #0077cc;
-        color: white;
-      }
-      .blue-bg h1 {
-        color: white;
-      }
-      .blue-bg .button {
-        background-color: #ffffff;
-        color: #0077cc;
-      }
-      .blue-bg .button:hover {
-        background-color: #f0f0f0;
-        color: #005fa3;
-      }
-      .hero-section h1 {
-        font-size: 42px;
-        margin-bottom: 30px;
-        color: #0077cc;
-      }
-      .hero-content {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      .button {
-        display: inline-block;
-        background-color: #0077cc;
-        color: white;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-      .button:hover {
-        background-color: #005fa3;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 119, 204, 0.3);
-      }
-      .features {
-        padding: 80px 5%;
-        background-color: #0077cc;
-        text-align: center;
-        color: white;
-      }
-      .features h2 {
-        font-size: 36px;
-        margin-bottom: 50px;
-        color: #ffffff;
-      }
-      .feature-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-      }
-      .feature {
-        flex: 1 1 250px;
-        max-width: 300px;
-        padding: 30px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-      .feature:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
-      .feature i {
-        font-size: 40px;
-        color: #ffffff;
-        margin-bottom: 20px;
-      }
-      .feature h3 {
-        font-size: 20px;
-        margin-bottom: 15px;
-      }
-      .how-it-works {
-        padding: 80px 5%;
-        background-color: #ffffff;
-        text-align: center;
-      }
-      .how-it-works h2 {
-        font-size: 36px;
-        margin-bottom: 50px;
-        color: #0077cc;
-      }
+
       .steps-container {
-        display: flex;
-        justify-content: center;
+        flex-direction: column;
+      }
+
+      .feature-container {
+        flex-direction: column;
         align-items: center;
-        gap: 30px;
-        max-width: 1000px;
-        margin: 0 auto;
       }
-      .step {
-        flex: 1;
-        padding: 30px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      }
-      .step i {
-        font-size: 36px;
-        color: #0077cc;
-        margin-bottom: 15px;
-      }
-      .step p {
-        font-size: 18px;
-        font-weight: 600;
-      }
-      .cta-section {
-        padding: 100px 5%;
-        text-align: center;
-        background-color: #ffffff;
-        position: relative;
-      }
-      .cta-content {
-        position: relative;
-        z-index: 1;
-      }
-      .cta-section h2 {
-        font-size: 36px;
-        color: #0077cc;
-        margin-bottom: 30px;
-      }
-      footer {
-        background-color: #222;
-        color: #fff;
-        padding: 40px 5%;
-        text-align: center;
-      }
-      footer a {
-        color: #0077cc;
-        text-decoration: none;
-      }
-      footer a:hover {
-        text-decoration: underline;
-      }
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          text-align: center;
-        }
-        .tagline {
-          margin-top: 10px;
-        }
-        .steps-container {
-          flex-direction: column;
-        }
-        .feature-container {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="banner">
-      <img
-        src="public/banner.jpg"
-        alt="OpenSea Sales Banner"
-        class="banner-image"
-        style="
+    }
+  </style>
+</head>
+
+<body>
+  <div class="banner">
+    <img src="public/banner.jpg" alt="OpenSea Sales Banner" class="banner-image" style="
           width: 100%;
           height: 360px;
           object-fit: cover;
           object-position: left top;
-        "
-      />
+        " />
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 style="color: #0077cc">Never Miss Another NFT Sale</h1>
+      <p style="font-size: 18px; margin-bottom: 30px;">Your smart assistant for tracking digital collectibles in
+        real-time. Get instant notifications when NFTs in your watchlist sell.</p>
+      <div class="cta">
+        <a href="#" class="button">
+          <i class="fa-brands fa-google-play"></i> Download on Google Play
+        </a>
+      </div>
     </div>
+  </section>
 
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 style="color: #0077cc">Watch your favorite NFT collections now</h1>
-        <div class="cta">
-          <a href="#" class="button">
-            <i class="fa-brands fa-google-play"></i> Get it on Google Play
-          </a>
-        </div>
+  <section class="features">
+    <h2>Why Choose OpenSea Sales?</h2>
+    <div class="feature-container">
+      <div class="feature">
+        <i class="fa-solid fa-infinity"></i>
+        <h3>Free to Use</h3>
+        <p>Start tracking collections instantly with no account or wallet connection required.</p>
       </div>
-    </section>
 
-    <section class="features">
-      <h2>Why Choose OpenSea Sales?</h2>
-      <div class="feature-container">
-        <div class="feature">
-          <i class="fa-solid fa-infinity"></i>
-          <h3>Free to use</h3>
-          <p>Watch one collection for free forever.</p>
-        </div>
-
-        <div class="feature">
-          <i class="fa-solid fa-bell"></i>
-          <h3>Timely notifications</h3>
-          <p>Get alerts as sales occur.</p>
-        </div>
-
-        <div class="feature">
-          <i class="fa-solid fa-star"></i>
-          <h3>Personalized watchlist</h3>
-          <p>Add any collection on OpenSea.</p>
-        </div>
-
-        <div class="feature">
-          <i class="fa-solid fa-chart-line"></i>
-          <h3>Sales History</h3>
-          <p>View past sales data and insights.</p>
-        </div>
+      <div class="feature">
+        <i class="fa-solid fa-bell"></i>
+        <h3>Real-Time Alerts</h3>
+        <p>Get immediate push notifications with detailed sale information, including price and buyer/seller data.</p>
       </div>
-    </section>
 
-    <section class="how-it-works">
-      <h2>How It Works</h2>
-      <div class="steps-container">
-        <div class="step">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <p>Search for a collection</p>
-        </div>
-
-        <div class="step">
-          <i class="fa-solid fa-plus"></i>
-          <p>Add to watchlist</p>
-        </div>
-
-        <div class="step">
-          <i class="fa-solid fa-bell"></i>
-          <p>Get notified</p>
-        </div>
+      <div class="feature">
+        <i class="fa-solid fa-star"></i>
+        <h3>Customizable Watchlist</h3>
+        <p>Track blue-chip NFTs, emerging artists, PFP trends, gaming drops, and any collection that interests you.</p>
       </div>
-    </section>
 
-    <section class="hero-section blue-bg">
-      <div class="hero-content">
-        <h1 style="color: white">Watch your favorite NFT collections now</h1>
-        <div class="cta">
-          <a href="#" class="button">
-            <i class="fa-brands fa-google-play"></i> Get it on Google Play
-          </a>
-        </div>
+      <div class="feature">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Sales History</h3>
+        <p>Access recent sales data to spot trends and make informed predictions about the market.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p>
-        <i class="fa-regular fa-copyright"></i> 2025 OpenSea Sales. All rights
-        reserved.
-      </p>
-      <p>
-        <a href="https://paputechxyz.github.io/OpenSeaSales/"
-          ><i class="fa-solid fa-lock"></i> Privacy Policy</a
-        >
-      </p>
-      <p><i class="fa-solid fa-envelope"></i> Contact: paputechxyz@gmail.com</p>
-    </footer>
-  </body>
+  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps-container">
+      <div class="step">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <p>Discover any NFT collection on OpenSea</p>
+      </div>
+
+      <div class="step">
+        <i class="fa-solid fa-plus"></i>
+        <p>Add collections to your personalized watchlist</p>
+      </div>
+
+      <div class="step">
+        <i class="fa-solid fa-bell"></i>
+        <p>Receive instant sales notifications</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero-section blue-bg">
+    <div class="hero-content">
+      <h1 style="color: white">Keep Your Finger on the Pulse of the NFT Marketplace</h1>
+      <p style="color: white; font-size: 18px; margin-bottom: 30px;">Whether you're an NFT creator monitoring your
+        portfolio, a collector scouting new opportunities, or a market enthusiast staying ahead of trends, OpenSea Sales
+        delivers the insights you need, exactly when you need them.</p>
+      <div class="cta">
+        <a href="#" class="button">
+          <i class="fa-brands fa-google-play"></i> Download on Google Play
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      <i class="fa-regular fa-copyright"></i> 2025 OpenSea Sales. All rights
+      reserved.
+    </p>
+    <p>
+      <a href="https://paputechxyz.github.io/OpenSeaSales/"><i class="fa-solid fa-lock"></i> Privacy Policy</a>
+    </p>
+    <p><i class="fa-solid fa-envelope"></i> Contact: paputechxyz@gmail.com</p>
+  </footer>
+</body>
+
 </html>
