@@ -125,11 +125,12 @@
     .feature {
       flex: 1 1 250px;
       max-width: 300px;
-      padding: 30px;
+      padding: 20px;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
+      margin: 0 auto;
     }
 
     .feature:hover {
@@ -171,10 +172,13 @@
 
     .step {
       flex: 1;
-      padding: 30px;
+      padding: 20px;
       background: white;
       border-radius: 10px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      max-width: 250px;
+      margin: 0 auto;
     }
 
     .step i {
@@ -240,6 +244,24 @@
         flex-direction: column;
         align-items: center;
       }
+
+      .feature {
+        max-width: 85%;
+        margin-bottom: 20px;
+      }
+
+      .hero-section h1 {
+        font-size: 32px;
+      }
+
+      .hero-section p {
+        font-size: 16px;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -250,7 +272,7 @@
           width: 100%;
           height: 360px;
           object-fit: cover;
-          object-position: left top;
+          object-position: 15% 10%;
         " />
   </div>
 
@@ -269,7 +291,7 @@
 
   <section class="features">
     <h2>Why Choose OpenSea Sales?</h2>
-    <div class="feature-container">
+    <div class="feature-container" style="max-width: 1200px; margin: 0 auto;">
       <div class="feature">
         <i class="fa-solid fa-infinity"></i>
         <h3>Free to Use</h3>

@@ -184,6 +184,27 @@ footer a {
     .features .feature,
     .how-it-works .step,
     .testimonials .testimonial {
-        width: 100%;
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .features h2, 
+    .how-it-works h2,
+    .testimonials h2,
+    .cta-section h2 {
+        font-size: 24px;
     }
 }
