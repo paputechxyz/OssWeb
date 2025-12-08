@@ -28,16 +28,13 @@
       .banner {
         height: 56.25vw; /* Maintains 16:9 aspect ratio (1536/2752 ≈ 0.5625) */
         min-height: 400px;
-        max-height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
+        max-height: 600px;
+        width: 100%;
         background-image: url("public/banner.png");
         background-size: cover;
         background-position: center;
-        background-attachment: fixed;
-        z-index: -1;
+        background-repeat: no-repeat;
+        display: block;
       }
 
       header {
@@ -69,11 +66,7 @@
       .hero-section {
         padding: 80px 5%;
         text-align: center;
-        background-color: rgba(255, 255, 255, 0.95);
-        margin-top: max(56.25vw, 400px);
-        margin-top: min(max(56.25vw, 400px), 100vh);
-        position: relative;
-        z-index: 1;
+        background-color: #ffffff;
       }
 
       .blue-bg {
@@ -128,8 +121,6 @@
         background-color: #0077cc;
         text-align: center;
         color: white;
-        position: relative;
-        z-index: 1;
       }
 
       .features h2 {
@@ -173,11 +164,9 @@
       }
 
       .how-it-works {
-        padding: 80px 5%;
+        padding: 40px 5%;
         background-color: #ffffff;
         text-align: center;
-        position: relative;
-        z-index: 1;
       }
 
       .how-it-works h2 {
@@ -221,8 +210,6 @@
         padding: 100px 5%;
         text-align: center;
         background-color: #ffffff;
-        position: relative;
-        z-index: 1;
       }
 
       .cta-content {
@@ -241,8 +228,6 @@
         color: #fff;
         padding: 40px 5%;
         text-align: center;
-        position: relative;
-        z-index: 1;
       }
 
       footer a {
