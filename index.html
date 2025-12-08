@@ -1,379 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT Sales Alert - Real-Time NFT Sales Notifications</title>
+    <link rel="icon" href="public/logo.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.6;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NFT Sales Alert - Real-Time NFT Sales Notifications</title>
-  <link rel="icon" href="public/logo.png" type="image/png">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: "Montserrat", sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.6;
-    }
+      .banner {
+        height: 420px;
+        position: relative;
+        background-color: #0077cc;
+      }
 
-    .banner {
-      height: 360px;
-      position: relative;
-      background-color: #0077cc;
-    }
-
-    header {
-      background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      font-size: 24px;
-      font-weight: 700;
-      color: #0077cc;
-    }
-
-    .logo-image {
-      margin-right: 10px;
-    }
-
-    .tagline {
-      font-size: 16px;
-      color: #555;
-    }
-
-    .hero-section {
-      padding: 80px 5%;
-      text-align: center;
-      background-color: #ffffff;
-    }
-
-    .blue-bg {
-      background-color: #0077cc;
-      color: white;
-    }
-
-    .blue-bg h1 {
-      color: white;
-    }
-
-    .blue-bg .button {
-      background-color: #ffffff;
-      color: #0077cc;
-    }
-
-    .blue-bg .button:hover {
-      background-color: #f0f0f0;
-      color: #005fa3;
-    }
-
-    .hero-section h1 {
-      font-size: 42px;
-      margin-bottom: 30px;
-      color: #0077cc;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .button {
-      display: inline-block;
-      background-color: #0077cc;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #005fa3;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 119, 204, 0.3);
-    }
-
-    .features {
-      padding: 80px 5%;
-      background-color: #0077cc;
-      text-align: center;
-      color: white;
-    }
-
-    .features h2 {
-      font-size: 36px;
-      margin-bottom: 50px;
-      color: #ffffff;
-    }
-
-    .feature-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .feature {
-      flex: 1 1 250px;
-      max-width: 300px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      margin: 0 auto;
-    }
-
-    .feature:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .feature i {
-      font-size: 40px;
-      color: #ffffff;
-      margin-bottom: 20px;
-    }
-
-    .feature h3 {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-
-    .how-it-works {
-      padding: 80px 5%;
-      background-color: #ffffff;
-      text-align: center;
-    }
-
-    .how-it-works h2 {
-      font-size: 36px;
-      margin-bottom: 50px;
-      color: #0077cc;
-    }
-
-    .steps-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .step {
-      flex: 1;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      width: 100%;
-      max-width: 250px;
-      margin: 0 auto;
-    }
-
-    .step i {
-      font-size: 36px;
-      color: #0077cc;
-      margin-bottom: 15px;
-    }
-
-    .step p {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .cta-section {
-      padding: 100px 5%;
-      text-align: center;
-      background-color: #ffffff;
-      position: relative;
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-section h2 {
-      font-size: 36px;
-      color: #0077cc;
-      margin-bottom: 30px;
-    }
-
-    footer {
-      background-color: #222;
-      color: #fff;
-      padding: 40px 5%;
-      text-align: center;
-    }
-
-    footer a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .tagline {
-        margin-top: 10px;
-      }
-
-      .steps-container {
-        flex-direction: column;
-      }
-
-      .feature-container {
-        flex-direction: column;
+        background-color: #ffffff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px 5%;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
       }
 
-      .feature {
-        max-width: 85%;
-        margin-bottom: 20px;
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: #0077cc;
+      }
+
+      .logo-image {
+        margin-right: 10px;
+      }
+
+      .tagline {
+        font-size: 16px;
+        color: #555;
+      }
+
+      .hero-section {
+        padding: 80px 5%;
+        text-align: center;
+        background-color: #ffffff;
+      }
+
+      .blue-bg {
+        background-color: #0077cc;
+        color: white;
+      }
+
+      .blue-bg h1 {
+        color: white;
+      }
+
+      .blue-bg .button {
+        background-color: #ffffff;
+        color: #0077cc;
+      }
+
+      .blue-bg .button:hover {
+        background-color: #f0f0f0;
+        color: #005fa3;
       }
 
       .hero-section h1 {
-        font-size: 32px;
+        font-size: 42px;
+        margin-bottom: 30px;
+        color: #0077cc;
       }
 
-      .hero-section p {
-        font-size: 16px;
+      .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
       }
 
       .button {
-        padding: 10px 20px;
-        font-size: 14px;
+        display: inline-block;
+        background-color: #0077cc;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <div class="banner">
-    <img src="public/banner.png" alt="NFT Sales Tracker Banner" class="banner-image" style="
+      .button:hover {
+        background-color: #005fa3;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 119, 204, 0.3);
+      }
+
+      .features {
+        padding: 80px 5%;
+        background-color: #0077cc;
+        text-align: center;
+        color: white;
+      }
+
+      .features h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+        color: #ffffff;
+      }
+
+      .feature-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .feature {
+        flex: 1 1 250px;
+        max-width: 300px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin: 0 auto;
+      }
+
+      .feature:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature i {
+        font-size: 40px;
+        color: #ffffff;
+        margin-bottom: 20px;
+      }
+
+      .feature h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .how-it-works {
+        padding: 80px 5%;
+        background-color: #ffffff;
+        text-align: center;
+      }
+
+      .how-it-works h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+        color: #0077cc;
+      }
+
+      .steps-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .step {
+        flex: 1;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+      }
+
+      .step i {
+        font-size: 36px;
+        color: #0077cc;
+        margin-bottom: 15px;
+      }
+
+      .step p {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .cta-section {
+        padding: 100px 5%;
+        text-align: center;
+        background-color: #ffffff;
+        position: relative;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-section h2 {
+        font-size: 36px;
+        color: #0077cc;
+        margin-bottom: 30px;
+      }
+
+      footer {
+        background-color: #222;
+        color: #fff;
+        padding: 40px 5%;
+        text-align: center;
+      }
+
+      footer a {
+        color: #0077cc;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .tagline {
+          margin-top: 10px;
+        }
+
+        .steps-container {
+          flex-direction: column;
+        }
+
+        .feature-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .feature {
+          max-width: 85%;
+          margin-bottom: 20px;
+        }
+
+        .hero-section h1 {
+          font-size: 32px;
+        }
+
+        .hero-section p {
+          font-size: 16px;
+        }
+
+        .button {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="banner">
+      <img
+        src="public/banner.png"
+        alt="NFT Sales Tracker Banner"
+        class="banner-image"
+        style="
           width: 100%;
-          height: 360px;
+          height: 420px;
           object-fit: cover;
-          object-position: 10% 10%;
-        " />
-  </div>
-
-  <section class="hero-section">
-    <div class="hero-content">
-      <h1 style="color: #0077cc">Never Miss a Flip, a Dip, or a Pump Again</h1>
-      <p style="font-size: 18px; margin-bottom: 30px;">NFT Sales Alert is the fastest way to monitor the OpenSea marketplace directly from your Android device. No wallet connection required - just search, watch, and get notified.</p>
-      <div class="cta">
-        <a href="https://play.google.com/store/apps/details?id=com.paputechxyz.openseasales" class="button"
-          target="_blank">
-          <i class="fa-brands fa-google-play"></i> Download on Google Play
-        </a>
-      </div>
+          object-position: 50% 50%;
+        "
+      />
     </div>
-  </section>
 
-  <section class="tutorial-video">
-    <h2 style="color: #0077cc">How to Use NFT Sales Alert</h2>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/0yeGFxzyuLw" title="NFT Sales Tracker Tutorial"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <p style="font-size: 18px; margin-top: 20px;">Watch our quick tutorial to learn how to get the most out of the
-      NFT Sales Alert app.</p>
-  </section>
-
-  <section class="features">
-    <h2>Why Choose NFT Sales Alert?</h2>
-    <div class="feature-container" style="max-width: 1200px; margin: 0 auto;">
-      <div class="feature">
-        <i class="fa-solid fa-lock"></i>
-        <h3>100% Safe & Private</h3>
-        <p>Start tracking immediately with no account sign-up and absolutely no wallet connection needed. Your assets stay safe while you track the market.</p>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 style="color: #0077cc">
+          Never Miss a Flip, a Dip, or a Pump Again
+        </h1>
+        <p style="font-size: 18px; margin-bottom: 30px">
+          NFT Sales Alert is the fastest way to monitor the OpenSea marketplace
+          directly from your Android device. No wallet connection required -
+          just search, watch, and get notified.
+        </p>
+        <div class="cta">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.paputechxyz.openseasales"
+            class="button"
+            target="_blank"
+          >
+            <i class="fa-brands fa-google-play"></i> Download on Google Play
+          </a>
+        </div>
       </div>
+    </section>
 
-      <div class="feature">
-        <i class="fa-solid fa-bell"></i>
-        <h3>Instant Sales Alerts</h3>
-        <p>Get immediate push notifications when an NFT sells. View the NFT information and transaction details within the app.</p>
+    <section class="tutorial-video">
+      <h2 style="color: #0077cc">How to Use NFT Sales Alert</h2>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/0yeGFxzyuLw"
+          title="NFT Sales Tracker Tutorial"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        >
+        </iframe>
       </div>
+      <p style="font-size: 18px; margin-top: 20px">
+        Watch our quick tutorial to learn how to get the most out of the NFT
+        Sales Alert app.
+      </p>
+    </section>
 
-      <div class="feature">
-        <i class="fa-solid fa-chart-line"></i>
-        <h3>Live Market Watchlist</h3>
-        <p>Build a personalized feed of the collections that matter to you. Track blue-chip projects, trending PFPs, gaming assets, or emerging artists.</p>
+    <section class="features">
+      <h2>Why Choose NFT Sales Alert?</h2>
+      <div class="feature-container" style="max-width: 1200px; margin: 0 auto">
+        <div class="feature">
+          <i class="fa-solid fa-lock"></i>
+          <h3>100% Safe & Private</h3>
+          <p>
+            Start tracking immediately with no account sign-up and absolutely no
+            wallet connection needed. Your assets stay safe while you track the
+            market.
+          </p>
+        </div>
+
+        <div class="feature">
+          <i class="fa-solid fa-bell"></i>
+          <h3>Instant Sales Alerts</h3>
+          <p>
+            Get immediate push notifications when an NFT sells. View the NFT
+            information and transaction details within the app.
+          </p>
+        </div>
+
+        <div class="feature">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Live Market Watchlist</h3>
+          <p>
+            Build a personalized feed of the collections that matter to you.
+            Track blue-chip projects, trending PFPs, gaming assets, or emerging
+            artists.
+          </p>
+        </div>
+
+        <div class="feature">
+          <i class="fa-solid fa-chart-bar"></i>
+          <h3>Historical Sales Data</h3>
+          <p>
+            View recent sales history to spot volume trends, price action, and
+            buyer momentum before you make a move.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="feature">
-        <i class="fa-solid fa-chart-bar"></i>
-        <h3>Historical Sales Data</h3>
-        <p>View recent sales history to spot volume trends, price action, and buyer momentum before you make a move.</p>
+    <section class="how-it-works">
+      <h2>How It Works</h2>
+      <div class="steps-container">
+        <div class="step">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <p>Discover any NFT collection on OpenSea</p>
+        </div>
+
+        <div class="step">
+          <i class="fa-solid fa-plus"></i>
+          <p>Add collections to your personalized watchlist</p>
+        </div>
+
+        <div class="step">
+          <i class="fa-solid fa-bell"></i>
+          <p>Receive instant sales notifications</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="how-it-works">
-    <h2>How It Works</h2>
-    <div class="steps-container">
-      <div class="step">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <p>Discover any NFT collection on OpenSea</p>
+    <section class="hero-section blue-bg">
+      <div class="hero-content">
+        <h1 style="color: white">
+          Keep Your Finger on the Pulse of the NFT Market
+        </h1>
+        <p style="color: white; font-size: 18px; margin-bottom: 30px">
+          For Creators: Get that dopamine hit whenever your art sells. For
+          Traders: Spot liquidity and volume spikes in real-time. For
+          Collectors: Keep an eye on the floor and sales activity of your
+          favorite communities.
+        </p>
+        <div class="cta">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.paputechxyz.openseasales"
+            class="button"
+            target="_blank"
+          >
+            <i class="fa-brands fa-google-play"></i> Download on Google Play
+          </a>
+        </div>
       </div>
+    </section>
 
-      <div class="step">
-        <i class="fa-solid fa-plus"></i>
-        <p>Add collections to your personalized watchlist</p>
-      </div>
-
-      <div class="step">
-        <i class="fa-solid fa-bell"></i>
-        <p>Receive instant sales notifications</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero-section blue-bg">
-    <div class="hero-content">
-      <h1 style="color: white">Keep Your Finger on the Pulse of the NFT Market</h1>
-      <p style="color: white; font-size: 18px; margin-bottom: 30px;">For Creators: Get that dopamine hit whenever your art sells. For Traders: Spot liquidity and volume spikes in real-time. For Collectors: Keep an eye on the floor and sales activity of your favorite communities.</p>
-      <div class="cta">
-        <a href="https://play.google.com/store/apps/details?id=com.paputechxyz.openseasales" class="button"
-          target="_blank">
-          <i class="fa-brands fa-google-play"></i> Download on Google Play
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>
-      <i class="fa-regular fa-copyright"></i> 2025 NFT Sales Alert. All rights
-      reserved.
-    </p>
-    <p>
-      <a href="https://paputechxyz.github.io/OpenSeaSales/"><i class="fa-solid fa-lock"></i> Privacy Policy</a>
-    </p>
-    <p><i class="fa-solid fa-envelope"></i> Contact: paputechxyz@gmail.com</p>
-  </footer>
-</body>
-
+    <footer>
+      <p>
+        <i class="fa-regular fa-copyright"></i> 2025 NFT Sales Alert. All rights
+        reserved.
+      </p>
+      <p>
+        <a href="https://paputechxyz.github.io/OpenSeaSales/"
+          ><i class="fa-solid fa-lock"></i> Privacy Policy</a
+        >
+      </p>
+      <p><i class="fa-solid fa-envelope"></i> Contact: paputechxyz@gmail.com</p>
+    </footer>
+  </body>
 </html>
