@@ -21,6 +21,8 @@
         padding: 0;
         color: #333;
         line-height: 1.6;
+        overscroll-behavior: none;
+        overflow-x: hidden;
       }
 
       .banner {
@@ -29,11 +31,12 @@
         top: 0;
         left: 0;
         width: 100%;
-        background-image: url('public/banner.png');
+        background-image: url("public/banner.png");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
         z-index: -1;
+        min-height: 100vh;
       }
 
       header {
@@ -298,7 +301,7 @@
           Never Miss a Flip, a Dip, or a Pump Again
         </h1>
         <p style="font-size: 18px; margin-bottom: 30px">
-          NFT Sales Alert is the fastest way to monitor the OpenSea marketplace
+          NFT Sales Alert is the easiest way to monitor the OpenSea marketplace
           directly from your Android device. No wallet connection required -
           just search, watch, and get notified.
         </p>
