@@ -52,6 +52,20 @@
 
     <link rel="canonical" href="https://nftsalesalert.com/" />
     <link rel="icon" href="public/logo.png" type="image/png" />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PVL8NYK2J7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-PVL8NYK2J7");
+    </script>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -524,6 +538,30 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
+
+      // Track download button clicks
+      document.addEventListener("DOMContentLoaded", function () {
+        const downloadButtons = document.querySelectorAll(
+          'a[href*="play.google.com"]'
+        );
+
+        downloadButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            // Track the click event
+            gtag("event", "click", {
+              event_category: "Download",
+              event_label: "Google Play Store",
+              value: 1,
+            });
+
+            // Optional: Add a small delay to ensure tracking fires before navigation
+            e.preventDefault();
+            setTimeout(() => {
+              window.open(this.href, "_blank");
+            }, 100);
+          });
+        });
+      });
     </script>
   </body>
 </html>
