@@ -3,47 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      NFT Sales Alert - Real-Time OpenSea NFT Sales Notifications & Alerts for
-      Android
-    </title>
+
+    <title>NFT Sales Alert - Free Real-Time OpenSea Notifications App</title>
     <meta
       name="description"
-      content="Get instant NFT sales alerts and notifications from OpenSea marketplace. Free Android app for tracking NFT collections, floor prices, and sales activity. No wallet connection required."
+      content="Get instant NFT sales alerts and notifications from OpenSea. Free Android app to track floor prices, sales activity, and NFT collections in real-time."
     />
     <meta
       name="keywords"
-      content="NFT alerts, OpenSea notifications, NFT sales tracker, Android NFT app, NFT marketplace alerts, OpenSea sales notifications, NFT collection tracker, real-time NFT alerts, NFT price alerts, NFT sales app"
+      content="NFT sales alert, OpenSea notifications, NFT floor price tracker, Android NFT app, NFT price alerts, OpenSea sales bot"
     />
     <meta name="author" content="NFT Sales Alert" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nftsalesalert.com/" />
     <meta
       property="og:title"
-      content="NFT Sales Alert - Real-Time OpenSea NFT Sales Notifications & Alerts for Android"
+      content="NFT Sales Alert - Real-Time OpenSea Notifications"
     />
     <meta
       property="og:description"
-      content="Get instant NFT sales alerts and notifications from OpenSea marketplace. Free Android app for tracking NFT collections, floor prices, and sales activity."
+      content="Never miss a flip. Get instant push notifications for NFT sales and floor price changes on OpenSea."
     />
     <meta
       property="og:image"
       content="https://nftsalesalert.com/public/banner.png"
     />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://nftsalesalert.com/" />
     <meta
       property="twitter:title"
-      content="NFT Sales Alert - Real-Time OpenSea NFT Sales Notifications & Alerts for Android"
+      content="NFT Sales Alert - Real-Time OpenSea Notifications"
     />
     <meta
       property="twitter:description"
-      content="Get instant NFT sales alerts and notifications from OpenSea marketplace. Free Android app for tracking NFT collections, floor prices, and sales activity."
+      content="Never miss a flip. Get instant push notifications for NFT sales and floor price changes on OpenSea."
     />
     <meta
       property="twitter:image"
@@ -53,7 +49,6 @@
     <link rel="canonical" href="https://nftsalesalert.com/" />
     <link rel="icon" href="public/logo.png" type="image/png" />
 
-    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-PVL8NYK2J7"
@@ -66,6 +61,7 @@
       gtag("js", new Date());
       gtag("config", "G-PVL8NYK2J7");
     </script>
+
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -75,6 +71,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
     <style>
       body {
         font-family: "Montserrat", sans-serif;
@@ -87,7 +84,7 @@
       }
 
       .banner {
-        height: 56.25vw; /* Maintains 16:9 aspect ratio (1536/2752 ≈ 0.5625) */
+        height: 56.25vw;
         min-height: 400px;
         max-height: 600px;
         width: 100%;
@@ -96,6 +93,8 @@
         background-position: center;
         background-repeat: no-repeat;
         display: block;
+        /* improved for accessibility/SEO if image fails to load */
+        background-color: #f0f0f0;
       }
 
       header {
@@ -113,15 +112,6 @@
         font-size: 24px;
         font-weight: 700;
         color: #0077cc;
-      }
-
-      .logo-image {
-        margin-right: 10px;
-      }
-
-      .tagline {
-        font-size: 16px;
-        color: #555;
       }
 
       .hero-section {
@@ -279,11 +269,6 @@
         background-color: #ffffff;
       }
 
-      .cta-content {
-        position: relative;
-        z-index: 1;
-      }
-
       .cta-section h2 {
         font-size: 36px;
         color: #0077cc;
@@ -310,10 +295,6 @@
         header {
           flex-direction: column;
           text-align: center;
-        }
-
-        .tagline {
-          margin-top: 10px;
         }
 
         .steps-container {
@@ -347,7 +328,11 @@
   </head>
 
   <body>
-    <div class="banner"></div>
+    <div
+      class="banner"
+      role="img"
+      aria-label="NFT Sales Alert App Banner"
+    ></div>
 
     <section class="hero-section">
       <div class="hero-content">
@@ -365,6 +350,8 @@
             href="https://play.google.com/store/apps/details?id=com.paputechxyz.openseasales"
             class="button"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download NFT Sales Alert on Google Play"
           >
             <i class="fa-brands fa-google-play"></i> Download on Google Play
           </a>
@@ -385,7 +372,15 @@
         >
         </iframe>
       </div>
-      <p style="font-size: 18px; margin-top: 20px">
+      <p
+        style="
+          font-size: 18px;
+          margin-top: 20px;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
         Watch our quick tutorial to learn how to set up NFT alerts and get the
         most out of the NFT Sales Alert Android app for OpenSea marketplace
         notifications.
@@ -473,6 +468,8 @@
             href="https://play.google.com/store/apps/details?id=com.paputechxyz.openseasales"
             class="button"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download NFT Sales Alert on Google Play"
           >
             <i class="fa-brands fa-google-play"></i> Download on Google Play
           </a>
@@ -486,13 +483,16 @@
         Notifications Android App. All rights reserved.
       </p>
       <p>
-        <a href="https://nftsalesalert.com/"
-          ><i class="fa-solid fa-lock"></i> Privacy Policy</a
+        <a
+          href="https://nftsalesalert.com/privacy-policy.html"
+          target="_blank"
+          rel="noopener noreferrer"
         >
+          <i class="fa-solid fa-lock"></i> Privacy Policy
+        </a>
       </p>
       <p><i class="fa-solid fa-envelope"></i> Contact: paputechxyz@gmail.com</p>
 
-      <!-- Structured Data for SEO -->
       <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -517,14 +517,9 @@
     </footer>
 
     <script type="module">
-      // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
 
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       const firebaseConfig = {
         apiKey: "AIzaSyAFwrbEe042psqbBZTi9ZPqnL7tsX6ZCkQ",
         authDomain: "nft-sales-38208.firebaseapp.com",
@@ -535,11 +530,9 @@
         measurementId: "G-PVL8NYK2J7",
       };
 
-      // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
 
-      // Track download button clicks
       document.addEventListener("DOMContentLoaded", function () {
         const downloadButtons = document.querySelectorAll(
           'a[href*="play.google.com"]'
@@ -547,18 +540,15 @@
 
         downloadButtons.forEach((button) => {
           button.addEventListener("click", function (e) {
-            // Track the click event
             gtag("event", "click", {
               event_category: "Download",
               event_label: "Google Play Store",
               value: 1,
             });
 
-            // Optional: Add a small delay to ensure tracking fires before navigation
-            e.preventDefault();
-            setTimeout(() => {
-              window.open(this.href, "_blank");
-            }, 100);
+            // Allow navigation to proceed naturally for better UX,
+            // unless you specifically need the delay for analytics consistency.
+            // If you keep the delay, ensure it's robust.
           });
         });
       });
