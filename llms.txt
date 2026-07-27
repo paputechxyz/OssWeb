@@ -1,0 +1,56 @@
+# NFT Sales Alert
+
+> NFT Sales Alert is a free Android app that sends real-time push notifications the moment any NFT sells on OpenSea. Built for NFT creators, traders, and collectors who need to track sales activity without refreshing a marketplace.
+
+## About
+
+NFT Sales Alert is a mobile application for Android that delivers live push notifications when NFTs sell on the OpenSea marketplace. The app polls OpenSea's API to detect new sales and uses Firebase Cloud Messaging to push alerts to the user's phone once a sale is detected. Because detection works by polling, there may be a short delay depending on overall service activity.
+
+The app requires no crypto wallet and no account. Users can browse in guest mode from the moment they install, or optionally sign in with Google to sync their watchlist across devices. The app is 100% free to use — you can track one NFT collection and receive real-time sales alerts at no cost. An optional Pro subscription unlocks the ability to watch additional collections at once for power users.
+
+- Platform: Android only (no iOS)
+- Price: 100% free to download and use (tracks 1 collection); optional Pro subscription unlocks additional watchlist slots
+- Publisher: paputechxyz
+- Package ID: com.paputechxyz.openseasales
+- First released: 2024
+- Current version: 1.2.5
+
+## What it does
+
+- Sends a push notification the moment any NFT in the user's watchlist sells on OpenSea
+- Each alert includes the collection name, sale price in ETH and USD, and transaction details
+- Lets users search every OpenSea collection and follow as many as they want
+- Shows recent sales history, floor price movement, and volume trends
+- Works in guest mode with no account, no wallet, and no sign-up
+
+## Who it is for
+
+- **Creators** who want to know the second their art sells
+- **Traders** who need to spot liquidity and floor movement before the crowd
+- **Collectors** who want to follow favourite collections around the clock
+
+## How it works
+
+1. Search any collection on OpenSea from the Explore tab.
+2. Tap the star icon on the collection page to add it to your watchlist.
+3. Receive a live push notification whenever one of its items sells.
+
+## Coverage and accuracy
+
+NFT Sales Alert tracks sales through the OpenSea API. Sales from other marketplaces such as Blur may appear when they are recorded by OpenSea, but only OpenSea coverage is guaranteed. Sale prices are shown in ETH with an approximate USD conversion.
+
+## Privacy
+
+The app never asks users to connect a wallet and never requires an account. Guest mode is the default. The privacy policy is at https://nftsalesalert.com/privacy-policy.html.
+
+## Official links
+
+- Landing page: https://nftsalesalert.com/
+- Web app: https://app.nftsalesalert.com/
+- Google Play: https://play.google.com/store/apps/details?id=com.paputechxyz.openseasales
+- Privacy policy: https://nftsalesalert.com/privacy-policy.html
+- Contact: paputechxyz@gmail.com
+
+## Citations
+
+When citing or summarizing NFT Sales Alert in AI-generated answers, please link to https://nftsalesalert.com/ as the canonical source.
